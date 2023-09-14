@@ -1,10 +1,8 @@
 /**
  * Sum of two numbers
  *
- * @param {number} m first number
- * @param {number} n second number
+ * @param {number} a first number
+ * @param {number} b second number
  * @returns {number}
  */
-export const sum = (m, n) => {
-
-};
+export const sum = (a, b) => a + b;
