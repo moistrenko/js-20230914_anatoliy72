@@ -8,15 +8,14 @@ export const createGetter = (path) => {
   const pathArray = path.split(".");
 
   return (obj) => {
-    let result;
+    let result = obj;
 
-    pathArray.forEach((item) => {
-      if (!result) {
-        result = obj[item];
-      } else {
-        result = result[item];
-      }
-    });
+    for (let value of pathArray) {
+      if (!(value in result)) return;
+
+      result = result[value];
+    }
+
     return result;
   };
 };
