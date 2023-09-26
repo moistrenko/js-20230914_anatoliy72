@@ -3,6 +3,12 @@
  * @param {*[]} arr - the array of primitive values
  * @returns {*[]} - the new array with uniq values
  */
-export function uniq(arr) {
+export const uniq = (arr = []) => {
+  return arr.reduce((acc, item) => {
+    if (!acc.includes(item)) {
+      acc.push(item);
+    }
 
-}
+    return acc;
+  }, []);
+};
