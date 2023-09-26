@@ -3,9 +3,7 @@
  * @param {*[]} arr - the array of primitive values
  * @returns {*[]} - the new array with uniq values
  */
-export const uniq = (arr) => {
-  if (!arr) return [];
-
+export const uniq = (arr = []) => {
   return arr.reduce((acc, item) => {
     if (!acc.includes(item)) {
       acc.push(item);
