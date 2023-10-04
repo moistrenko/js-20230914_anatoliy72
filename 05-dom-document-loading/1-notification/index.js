@@ -1,11 +1,13 @@
 export default class NotificationMessage {
   element;
+  activeElement;
 
   constructor(message, props = {}) {
     const { duration = 1000, type = "success" } = props;
     this.message = message;
     this.duration = duration;
     this.type = type;
+
     this.element = this.createElement();
   }
 
@@ -43,6 +45,12 @@ export default class NotificationMessage {
   }
 
   show(el) {
+    if (NotificationMessage.activeElement) {
+      NotificationMessage.activeElement.destroy();
+    }
+
+    NotificationMessage.activeElement = this;
+
     if (el) {
       el.appendChild(this.element);
       this.element = el;
