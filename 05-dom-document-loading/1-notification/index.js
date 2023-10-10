@@ -57,7 +57,7 @@ export default class NotificationMessage {
     }
 
     this.addToHTML();
-    setTimeout(this.remove.bind(this), this.duration);
+    setTimeout(this.destroy.bind(this), this.duration);
   }
 
   destroy() {
